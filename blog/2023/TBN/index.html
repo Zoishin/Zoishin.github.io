@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-        <title>Getting Started - Zoishin</title>
+        <title>A complete analysis of the Tangent Space. - Zoishin</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +12,12 @@
         
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../assets/css/dracula-ui.css">
-        <link rel="stylesheet" href="../../assets/css/mkdocs.css">
+        <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../../assets/css/dracula-ui.css">
+        <link rel="stylesheet" href="../../../assets/css/mkdocs.css">
 
         
-            <link  rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+            <link  rel="icon" type="image/x-icon" href="../../../img/favicon.ico">
         
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
                 <script>hljs.initHighlightingOnLoad();</script>
@@ -39,7 +39,7 @@
 
     <div class="p-4">
         
-            <img class="logo" src="../../img/profile_picture.png" height="150px">
+            <img class="logo" src="../../../img/profile_picture.png" height="150px">
         
 
         <div class="drac-text-center">
@@ -66,22 +66,22 @@
         <ul class="mb-5 drac-list drac-list-none">
             
             <li class="drac-box">
-                <a href="../.."
+                <a href="../../.."
                     class="
                     drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
                     Home
                 </a>
             </li>
             <li class="drac-box">
-                <a href="./"
-                    class=" active 
+                <a href="../../../nav/getting-started/"
+                    class="
                     drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
                     Getting Started
                 </a>
             </li>
             <li class="drac-box">
-                <a href="../.."
-                    class="
+                <a href="../../.."
+                    class=" active 
                     drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
                     data-bs-toggle="collapse" data-bs-target="#2023-blogs-collapse" aria-expanded="false">
                     2023 Blogs
@@ -90,15 +90,15 @@
                     <ul class="mb-5 drac-list drac-list-none">
                             
     <li class="drac-box-ternary">
-        <a href="../../blog/2023/TBN/"
-            class="
+        <a href="./"
+            class=" active 
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             A complete analysis of the Tangent Space.
         </a>
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../development/release-notes/"
+        <a href="../../../nav/development/release-notes/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Release Notes
@@ -135,13 +135,13 @@
         <div class="container">
             <div class="row row-preview">
                 <div class="col">
-                    <a href="../.."
+                    <a href="../../../nav/getting-started/"
                         class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </div>
                 <div class="col">
-                    <a href="../../blog/2023/TBN/"
+                    <a href="../../../nav/development/release-notes/"
                         class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
@@ -153,7 +153,7 @@
 
                     <!-- block search -->
                     <li class="nav-item"><div role="search" class="search-box">
-	<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+	<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
 		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
 		placeholder="Search docs" title="Type search term here" />
 	</form>
@@ -214,27 +214,30 @@
             <!-- block content -->
                 <section class="p-md-5 section-content">
     <article>
-        <p><h1 id="getting-started">Getting Started</h1>
+        <p><h1 id="a-complete-analysis-of-the-tangent-space">A complete analysis of the Tangent Space.</h1>
 <hr />
-<p><strong>Installation MkDocs</strong></p>
-<ul>
-<li>To install MkDocs, run the following command from the command line:<pre><code>pip install mkdocs
-</code></pre>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>The definition and calculation methods of the tangent space are abundant, but many resources have misleading or fundamentally wrong explanations in their definitions. In order to completely and correctly understand the tangent space, this article will analyze the tangent space from its definition to its calculation and provide examples to clarify any confusion. Additionally, readers are encouraged to think critically and make judgments in this article, which is intended to be helpful.</p>
+<p>Before delving into the main content, you can ask yourself the following questions if you are uncertain. If you still have confusion, please continue reading this article to resolve them:</p>
+<ol>
+<li>
+<p>Is the direction of the tangent axis the same as the u-axis, and the direction of the bitangent axis the same as the v-axis?</p>
 </li>
-</ul>
-<p><strong>Installation theme</strong></p>
-<ul>
-<li>Install the theme using PIP:<pre><code>pip install mkdocs-dracula-theme
-</code></pre>
+<li>
+<p>Are the uv axes mapped onto the three-dimensional surface perpendicular to each other?</p>
 </li>
-</ul>
-<p><strong>Activating theme</strong></p>
-<ul>
-<li>After the theme is installed, edit your <code>mkdocs.yml</code> file and set the theme name to <code>dracula</code>:<pre><code>theme:
-    name: dracula
-</code></pre>
+<li>
+<p>How is the N (Normal) axis in the TBN (tangent, bitangent, normal) space obtained? Is it perpendicular to the mapped direction of the uv axes on the three-dimensional surface?</p>
 </li>
-</ul></p>
+<li>
+<p>Can vertex normals be directly obtained by averaging the normals of adjacent faces?</p>
+</li>
+<li>
+<p>After carefully examining this potentially ambiguous image, do you have any new thoughts or insights?</p>
+</li>
+</ol>
+<p><img alt="Fig.1" src="../img/1.png" /></p>
+<h2 id="2-main-content">2. Main Content</h2></p>
     </article>
 </section>
             <!-- endblock -->
@@ -253,11 +256,11 @@
 
     </main>
 
-        <script>var base_url = '../..';</script>
-        <script src="../../assets/js/jquery-3.3.1.slim.min.js""></script>
-        <script src="../../assets/js/bootstrap.bundle.min.js""></script>
-        <script src="../../assets/js/mkdocs.js""></script>
-			<script src="../../search/main.js" defer></script>
+        <script>var base_url = '../../..';</script>
+        <script src="../../../assets/js/jquery-3.3.1.slim.min.js""></script>
+        <script src="../../../assets/js/bootstrap.bundle.min.js""></script>
+        <script src="../../../assets/js/mkdocs.js""></script>
+			<script src="../../../search/main.js" defer></script>
 
 </body>
 
